@@ -1,0 +1,91 @@
+   
+   
+   <!-- calculator task -->
+   <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #calculator {
+                display: table;
+                padding: 10px;
+                background-color: rgb(32, 32, 32);
+                border-radius: 15px;
+                margin: 20vh auto;  
+                text-align: center;   
+            }
+            #display {
+                text-align: right;
+                width: 200px;
+                background-color: rgb(160, 160, 160);
+                border: 0;
+                border-radius: 15px;
+                padding: 20px 5px;
+                margin: 20px 0;
+                font-size: 1.5rem;
+            }
+            button {
+                margin: 2px;
+                width: 50px;
+                height: 50px;
+                border-radius: 20%;
+            }
+            .eq {
+                width: 47%;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calculator">
+            <div>
+                <input type="text" id="display">
+            </div>
+            <div>
+                <button onclick="clean()">C</button>
+                <button onclick="show('%')">%</button>
+                <button onclick="show('+')">+</button>
+                <button onclick="clean('<=')"><=</button>
+            </div>
+            <div>
+                <button onclick="show('7')">7</button>
+                <button onclick="show('8')">8</button>
+                <button onclick="show('9')">9</button>
+                <button onclick="show('-')">-</button>
+            </div>
+            <div>
+                <button onclick="show('4')">4</button>
+                <button onclick="show('5')">5</button>
+                <button onclick="show('6')">6</button>
+                <button onclick="show('*')">*</button>
+            </div>
+            <div>
+                <button onclick="show('1')">1</button>
+                <button onclick="show('2')">2</button>
+                <button onclick="show('3')">3</button>
+                <button onclick="show('/')">/</button>
+            </div>
+            <div>
+                <button onclick="show('0')">0</button>
+                <button onclick="show('.')">.</button>
+                <button onclick="calc()" class="eq">=</button>
+            </div>
+        </div>
+
+        <script>
+            let display = document.querySelector('#display')
+            function show(n) {
+                display.value += n
+            }
+            function  calc() {
+                display.value = eval(display.value)
+            }
+            function clean() {
+                display.value = ''
+            }
+        </script>
+    </body>
+</html>
+</body>
